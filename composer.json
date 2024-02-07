@@ -20,13 +20,5 @@
             "AlexGithub987\\Sekadatacheck\\": "src/"
         }
     },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "AlexGithub987\\Ugyfel\\UgyfelServiceProvider",
-                "AlexGithub987\\Cikk\\CikkServiceProvider"
-            ]
-        }
-    },
     "minimum-stability": "dev"
 }
