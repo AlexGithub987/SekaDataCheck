@@ -6,7 +6,7 @@
         {
             "name": "Alex",
             "email": "kolozs.sandor@sekasoft.hu",
-            "homepage": "http://author.hu"
+            "homepage": "http://author.com"
         }
     ],
     "homepage": "https://github.com/alexgithub987/sekadatacheck",
@@ -18,6 +18,14 @@
     "autoload": {
         "psr-4": {
             "AlexGithub987\\Sekadatacheck\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlexGithub987\\Ugyfel\\UgyfelServiceProvider",
+                "AlexGithub987\\Cikk\\CikkServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev"
