@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexGithub987\Ugyfel;
+namespace AlexGithub987\sekadatacheck\Ugyfel;
 
 use Illuminate\Support\ServiceProvider;
 

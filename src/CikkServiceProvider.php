@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexGithub987\Cikk;
+namespace AlexGithub987\sekadatacheck\Cikk;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace AlexGithub987\Cikk;
+namespace AlexGithub987\sekadatacheck\Cikk;
 
-use AlexGithub987\Models\Companies;
+use AlexGithub987\sekadatacheck\Models\Companies;
 
 class Cikk
 {
