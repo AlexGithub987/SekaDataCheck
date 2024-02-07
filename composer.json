@@ -23,15 +23,11 @@
             "AlexGithub987\\Sekadatacheck\\": "src/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "AlexGithub987\\Sekadatacheck\\Tests\\": "tests"
-        }
-    },
     "extra": {
         "laravel": {
             "providers": [
-                "AlexGithub987\\Sekadatacheck\\SekadatacheckServiceProvider"
+                "AlexGithub987\\Sekadatacheck\\UgyfelServiceProvider",
+                "AlexGithub987\\Sekadatacheck\\CikkServiceProvider"
             ]
         }
     },
