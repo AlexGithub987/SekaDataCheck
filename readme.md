@@ -3,9 +3,7 @@
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
 [![Build Status][ico-travis]][link-travis]
-[![StyleCI][ico-styleci]][link-styleci]
 
-This is where your description should go. Take a look at [contributing.md](contributing.md) to see a to do list.
 
 ## Installation
 
@@ -15,21 +13,55 @@ Via Composer
 composer require alexgithub987/sekadatacheck
 ```
 
-## Usage
+## Usage - Ugyfel
+
+```bash
+ $data_array = [
+   "nev" => "Dezső Miskolc", 
+   "email" => "mjeszt@dezsomiskolc.hu", 
+   "telefon" => "06301234567", 
+   "adoszam" => "asdasfaf", 
+   "ceg" => "", 
+   "cim_type" => "SZEKHELY", 
+   "orszag" => "HU", 
+   "irsz" => "6800", 
+   "varos" => "Hódmezővásárhely", 
+   "kozterulet" => "", 
+   "kozterulet_jelleg" => "", 
+   "hsz" => "", 
+   "egyszeru_cim" => "6800 Hódmezővásárhely Makói ország út 77178 hrsz." 
+]; 
+
+$ugyfel = new Ugyfel;
+$ugyfel->index($data_array);
+```
+
+## Usage - Cikk
+
+```bash
+ $data_array = [
+   "nev" => "Dezső Miskolc", 
+   "email" => "mjeszt@dezsomiskolc.hu", 
+   "telefon" => "06301234567", 
+   "adoszam" => "asdasfaf", 
+   "ceg" => "", 
+   "cim_type" => "SZEKHELY", 
+   "orszag" => "HU", 
+   "irsz" => "6800", 
+   "varos" => "Hódmezővásárhely", 
+   "kozterulet" => "", 
+   "kozterulet_jelleg" => "", 
+   "hsz" => "", 
+   "egyszeru_cim" => "6800 Hódmezővásárhely Makói ország út 77178 hrsz." 
+]; 
+
+$ugyfel = new Ugyfel;
+$ugyfel->index($data_array);
+```
 
 ## Change log
 
 Please see the [changelog](changelog.md) for more information on what has changed recently.
-
-## Testing
-
-```bash
-composer test
-```
-
-## Contributing
-
-Please see [contributing.md](contributing.md) for details and a todolist.
 
 ## Security
 

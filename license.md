@@ -1,5 +1,5 @@
 # The license
 
-Copyright (c) Author Name <author@email.com>
+Copyright (c) Alex <kolozs.sandor@sekasoft.hu>
 
 ...Add your license text here...

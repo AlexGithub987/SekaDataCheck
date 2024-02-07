@@ -4,8 +4,8 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Author Name",
-            "email": "author@email.com",
+            "name": "Alex",
+            "email": "kolozs.sandor@sekasoft.hu",
             "homepage": "http://author.com"
         }
     ],
@@ -32,10 +32,8 @@
         "laravel": {
             "providers": [
                 "AlexGithub987\\Sekadatacheck\\SekadatacheckServiceProvider"
-            ],
-            "aliases": {
-                "Sekadatacheck": "AlexGithub987\\Sekadatacheck\\Facades\\Sekadatacheck"
-            }
+            ]
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
