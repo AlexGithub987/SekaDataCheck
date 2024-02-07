@@ -1,0 +1,41 @@
+{
+    "name": "alexgithub987/sekadatacheck",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Author Name",
+            "email": "author@email.com",
+            "homepage": "http://author.com"
+        }
+    ],
+    "homepage": "https://github.com/alexgithub987/sekadatacheck",
+    "keywords": ["Laravel", "Sekadatacheck"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "AlexGithub987\\Sekadatacheck\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AlexGithub987\\Sekadatacheck\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "AlexGithub987\\Sekadatacheck\\SekadatacheckServiceProvider"
+            ],
+            "aliases": {
+                "Sekadatacheck": "AlexGithub987\\Sekadatacheck\\Facades\\Sekadatacheck"
+            }
+        }
+    }
+}
