@@ -23,8 +23,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "AlexGithub987\\Sekadatacheck\\UgyfelServiceProvider",
-                "AlexGithub987\\Sekadatacheck\\CikkServiceProvider"
+                "AlexGithub987\\Ugyfel\\UgyfelServiceProvider",
+                "AlexGithub987\\Cikk\\CikkServiceProvider"
             ]
         }
     },
