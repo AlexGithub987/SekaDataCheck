@@ -1,5 +1,5 @@
 {
-    "name": "alexgithub987/sekadatacheck",
+    "name": "alexgithub987/ugyfel",
     "description": ":package_description",
     "license": "MIT",
     "authors": [
@@ -9,22 +9,26 @@
             "homepage": "http://author.com"
         }
     ],
-    "homepage": "https://github.com/alexgithub987/sekadatacheck",
-    "keywords": ["Laravel", "Sekadatacheck"],
+    "homepage": "https://github.com/alexgithub987/ugyfel",
+    "keywords": ["Laravel", "Ugyfel"],
     "require-dev": {
         "phpunit/phpunit": "~9.0",
         "orchestra/testbench": "~7"
     },
     "autoload": {
         "psr-4": {
-            "AlexGithub987\\Sekadatacheck\\": "src/"
+            "AlexGithub987\\Ugyfel\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "AlexGithub987\\Ugyfel\\Tests\\": "tests"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "AlexGithub987\\sekadatacheck\\Ugyfel\\UgyfelServiceProvider",
-                "AlexGithub987\\sekadatacheck\\Cikk\\CikkServiceProvider"
+                "AlexGithub987\\Ugyfel\\UgyfelServiceProvider"
             ]
         }
     },
