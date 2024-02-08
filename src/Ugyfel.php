@@ -1,11 +1,11 @@
 <?php
 
-namespace AlexGithub987\Ugyfel;
+namespace AlexGithub987\sekadatacheck;
 
-use AlexGithub987\Ugyfel\Models\Companies;
-use AlexGithub987\Ugyfel\Models\Ugyfel as ModelsUgyfel;
-use AlexGithub987\Ugyfel\Models\Ugyfel_cim as ModelsUgyfel_cim;
-use AlexGithub987\Ugyfel\Models\Ugyfel_kapcsolat as ModlesUgyfel_kapcsolat;
+use AlexGithub987\sekadatacheck\Models\Companies;
+use AlexGithub987\sekadatacheck\Models\Ugyfel as ModelsUgyfel;
+use AlexGithub987\sekadatacheck\Models\Ugyfel_cim as ModelsUgyfel_cim;
+use AlexGithub987\sekadatacheck\Models\Ugyfel_kapcsolat as ModlesUgyfel_kapcsolat;
 
 class Ugyfel
 {

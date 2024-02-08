@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexGithub987\Ugyfel\Models;
+namespace AlexGithub987\sekadatacheck\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
