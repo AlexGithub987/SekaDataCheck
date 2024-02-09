@@ -13,7 +13,20 @@ Via Composer
 composer require alexgithub987/sekadatacheck
 ```
 
+## Installation
+
+/config/app.php
+
+    'jiraproject' => env('JIRA_PROJECT', ''),
+    'jiraassignee' => env('JIRA_ASSIGNEE', ''),
+    'jirauser' => env('JIRA_USER', ''),
+    'jirapassword' => env('JIRA_PASSWORD', ''),
+    'jiraurl' => env('JIRA_URL', ''),
+
+
 ## Usage
+
+Ügyfél:
 
 ```bash
  $data_array = [
@@ -30,15 +43,22 @@ composer require alexgithub987/sekadatacheck
    "kozterulet_jelleg" => "", 
    "hsz" => "", 
    "egyszeru_cim" => "6800 Hódmezővásárhely Makói ország út 77178 hrsz." 
-]; 
+  ]; 
 
-$ugyfel = new Ugyfel;
-$ugyfel->index($data_array);
+  $ugyfel = new Ugyfel;
+  $ret = $ugyfel->index($data_array);
 ```
 
-## Change log
+Cikk
 
-Please see the [changelog](changelog.md) for more information on what has changed recently.
+```bash
+    $cikkszam = 555;
+    $partner = 2;
+
+    $cikk = new Cikk();
+
+    $ret = $cikk->index($cikkszam, $partner);
+```
 
 
 ## Contributing

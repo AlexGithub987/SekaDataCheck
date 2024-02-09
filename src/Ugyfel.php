@@ -6,14 +6,10 @@ use AlexGithub987\sekadatacheck\Models\Companies;
 use AlexGithub987\sekadatacheck\Models\Ugyfel as ModelsUgyfel;
 use AlexGithub987\sekadatacheck\Models\Ugyfel_cim as ModelsUgyfel_cim;
 use AlexGithub987\sekadatacheck\Models\Ugyfel_kapcsolat as ModlesUgyfel_kapcsolat;
+use AlexGithub987\sekadatacheck\Support\jiraTask;
 
 class Ugyfel
 {
-    // Build wonderful things
-    public function hello()
-    {
-        return 'Hello, World!';
-    } 
     
     public function index($request) {
 
@@ -75,16 +71,16 @@ class Ugyfel
 
         if (isset($data['adoszam'])) {
 
-            // if ($data['adoszam'] != '' and strlen($data['adoszam']) != 13 and !preg_match('/^[0-9_-]*$/', $data['adoszam'])) {
+            if ($data['adoszam'] != '' and strlen($data['adoszam']) != 13 and !preg_match('/^[0-9_-]*$/', $data['adoszam'])) {
 
-            //     $dummy = [
-            //         'summary'       => 'Hiba az ügyfél azonosításban (ConnectivityAPI)',
-            //         'description'   => '*Tenant: ' . $tenant->id .'*  - Hibás adószám: ' . $data['adoszam'] . ', Ügyfél ID: ' . $ugyfel_new->id,
-            //         'table'         => 'ugyfel',
-            //         'table_row'     => $ugyfel_new->id
-            //     ];
-            //     jiraTask::createIssue($dummy);
-            // }
+                $dummy = [
+                    'summary'       => 'Hiba az ügyfél azonosításban (ConnectivityAPI)',
+                    'description'   => '*Tenant: dd*  - Hibás adószám: ' . $data['adoszam'] . ', Ügyfél ID: ' . $ugyfel_new->id,
+                    'table'         => 'ugyfel',
+                    'table_row'     => $ugyfel_new->id
+                ];
+                jiraTask::createIssue($dummy);
+            }
         }      
         
         if (isset($data['egyszeru_cim'])) {
