@@ -10,7 +10,7 @@
 Via Composer
 
 ```bash
-composer require alexgithub987/ugyfel
+composer require alexgithub987/sekadatacheck
 ```
 
 ## Usage
