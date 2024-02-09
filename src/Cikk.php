@@ -8,7 +8,8 @@ use AlexGithub987\sekadatacheck\Models\KereskedelemBeallitas;
 class Cikk
 {
 
-    public function index($cikk_azonosito, $partner_id) {
+    public function index($cikk_azonosito, $partner_id)
+    {
 
         $kereskedelem_beallitas = KereskedelemBeallitas::get_beallitas($partner_id, 'KERESKEDELEM_RENDELES');
 
@@ -18,7 +19,7 @@ class Cikk
             $noitem = 0;
         }
 
-        
+
         if (isset($kereskedelem_beallitas->cikkparositas)) {
 
             if ($kereskedelem_beallitas->cikkparositas == 'cikk_azonosito') {
@@ -40,7 +41,7 @@ class Cikk
 
                 return $cikkszam;
             }
-             
+
             if ($kereskedelem_beallitas->cikkparositas == 'forgalmazoi_kod') {
                 $cikkszam = ModelsCikk::select("*")
                     ->where("forgalmazoi_kod", "=", $cikk_azonosito)
@@ -57,11 +58,11 @@ class Cikk
                 if ($cikkszam->count() == 0) {
                     $cikkszam = self::get_noitem($partner_id, $noitem);
                 }
- 
+
                 return $cikkszam;
             }
         }
-        
+
         $cikkszam = ModelsCikk::select("cikktorzs.*")
             ->where("cikk_azonosito", "=", $cikk_azonosito)
             ->get();
@@ -93,12 +94,9 @@ class Cikk
         }
 
         return $cikkszam;
-
- 
-
     }
 
-        // private static function get_noitem($noitem)
+    // private static function get_noitem($noitem)
     // {
 
     //     return ModelsCikk::select("*")
@@ -119,8 +117,5 @@ class Cikk
             ->get();
 
         return $cikkszam;
-
     }
-     
-
 }

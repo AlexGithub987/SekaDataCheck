@@ -13,14 +13,17 @@ class JiraTask
 
         $jira_exists = ModelsJiraTask::where('table_name', $data['table'])->where('table_row_id', $data['table_row'])->first();
         if (isset($jira_exists)) {
-            return '';
+            return false;
         }
+
+        $dummy = array();
+        $json = array();
 
         $data['username'] = config('app.jirauser');
         $data['password'] = config('app.jirapassword');
         $data['content'] = 'application/json';
         $data['endpoint'] = config('app.jiraurl');
-
+        
         $dummy['project']['key'] = config('app.jiraproject');
         $dummy['summary'] = config('app.env') . ' :: ' . $data['summary'];
         $dummy['description'] =  $data['description'];
@@ -29,7 +32,7 @@ class JiraTask
 
         $json['fields'] = $dummy;
 
-        $res = Http::withHeaders(['X-Atlassian-Token' => 'no-check', 'User-Agent' => 'Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)'])
+        $http_res = Http::withHeaders(['X-Atlassian-Token' => 'no-check', 'User-Agent' => 'Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)'])
             ->withBasicAuth($data['username'], $data['password'])
             ->withOptions(['verify' => false])
             ->accept($data['content'])
@@ -42,7 +45,7 @@ class JiraTask
 
         $Jiramodel->table_name = $data['table'];
         $Jiramodel->table_row_id = $data['table_row'];
-        $Jiramodel->description = $res['key'] . ' | ' . $data['description'];
+        $Jiramodel->description = $http_res['key'] . ' | ' . $data['description'];
         $Jiramodel->save();
     }
 }

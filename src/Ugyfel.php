@@ -10,11 +10,12 @@ use AlexGithub987\sekadatacheck\Support\jiraTask;
 
 class Ugyfel
 {
-    
-    public function index($request) {
 
-        if ( $request['adoszam'] ) {       
-            $ugyfel_tipus = 'JOGISZEMELY';    
+    public function index($request)
+    {
+
+        if ($request['adoszam']) {
+            $ugyfel_tipus = 'JOGISZEMELY';
         } else {
             $ugyfel_tipus = 'MAGANSZEMELY';
         }
@@ -27,17 +28,16 @@ class Ugyfel
                 return ["message" => "hiányzó paraméter(ek): cég vagy adószám"];
             }
             $ugyfel_dummy = ModelsUgyfel::getUgyfelDataForCheckAdo($request);
-
         } else {
             if (!isset($request['nev']) or !isset($request['email'])) {
                 return ["message" => "hiányzó paraméter(ek): email vagy név"];
             }
             $ugyfel_dummy = ModelsUgyfel::getUgyfelDataForCheck($request);
         }
- 
+
 
         if (isset($ugyfel_dummy['ugyfelid'])) {
- 
+
             $ugyfel             = ModelsUgyfel::select('*')->where('id', $ugyfel_dummy['ugyfelid'])->get()->toArray();
             $ugyfel_cim         = ModelsUgyfel_cim::select('*')->where('id', $ugyfel_dummy['ugyfelcimid'])->get()->toArray();
             $ugyfel_kapcsolat   = ModlesUgyfel_kapcsolat::select('*')->where('ugyfel_id', $ugyfel_dummy['ugyfelid'])->get()->toArray();
@@ -47,11 +47,9 @@ class Ugyfel
             // ugyfel letrehozás
             return self::create_ugyfel($request, $company_id, $ugyfel_tipus);
         }
-        
-
     }
 
-    
+
     private static function create_ugyfel($data, $company_id, $ugyfel_tipus)
     {
 
@@ -81,16 +79,16 @@ class Ugyfel
                 ];
                 jiraTask::createIssue($dummy);
             }
-        }      
-        
+        }
+
         if (isset($data['egyszeru_cim'])) {
             $kozterulet = $data['egyszeru_cim'];
             $find_string = $data['egyszeru_cim'];
         } else {
             $kozterulet = $data['kozterulet'];
-            $find_string = $data['irsz'].' '.$data['varos'].' '.$data['kozterulet'].' '.$data['kozterulet_jelleg'].' '.$data['hsz'];
-        } 
-                
+            $find_string = $data['irsz'] . ' ' . $data['varos'] . ' ' . $data['kozterulet'] . ' ' . $data['kozterulet_jelleg'] . ' ' . $data['hsz'];
+        }
+
         $ugyfel_cim_new = new ModelsUgyfel_cim();
         $ugyfel_cim_new->ugyfel_id          = $ugyfel['id'];
         $ugyfel_cim_new->irsz               = isset($data['egyszeru_cim']) ? NULL : $data['irsz'];
@@ -118,6 +116,4 @@ class Ugyfel
 
         return ["ugyfel" => [$ugyfel], "ugyfel_cim" => [$ugyfel_cim], "ugyfel_kapcsolat" => [$ugyfel_kapcsolat]];
     }
-
-
 }
