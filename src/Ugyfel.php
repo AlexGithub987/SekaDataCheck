@@ -1,6 +1,6 @@
 <?php
 
-namespace AlexGithub987\sekadatacheck\Ugyfel;
+namespace AlexGithub987\sekadatacheck;
 
 use AlexGithub987\sekadatacheck\Models\Companies;
 use AlexGithub987\sekadatacheck\Models\Ugyfel as ModelsUgyfel;
