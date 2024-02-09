@@ -12,7 +12,7 @@ class Ugyfel
     // Build wonderful things
     public function hello()
     {
-        return 'Hello, World!';
+        return 'Hello, World!3';
     } 
     
     public function index($request) {
