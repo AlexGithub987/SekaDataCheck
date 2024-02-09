@@ -5,7 +5,7 @@ namespace AlexGithub987\sekadatacheck\Support;
 use AlexGithub987\sekadatacheck\Models\JiraTask as ModelsJiratask;
 use Illuminate\Support\Facades\Http;
 
-class jiraTask
+class JiraTask
 {
 
     public static function createIssue($data)
