@@ -23,6 +23,7 @@ composer require alexgithub987/sekadatacheck
     'jirapassword' => env('JIRA_PASSWORD', ''),
     'jiraurl' => env('JIRA_URL', ''),
 
+í
 
 ## Usage
 
