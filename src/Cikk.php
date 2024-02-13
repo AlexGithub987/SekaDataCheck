@@ -8,8 +8,11 @@ use AlexGithub987\sekadatacheck\Models\KereskedelemBeallitas;
 class Cikk
 {
 
-    public function index($cikk_azonosito, $partner_id)
+    public function index($request)
     {
+        
+        $cikk_azonosito = $request['cikkszam'];
+        $partner_id = $request['partner_id'];
 
         $kereskedelem_beallitas = KereskedelemBeallitas::get_beallitas($partner_id, 'KERESKEDELEM_RENDELES');
 

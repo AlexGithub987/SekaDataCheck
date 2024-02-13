@@ -1,4 +1,4 @@
-# Ugyfel
+# Sekadatacheck
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Total Downloads][ico-downloads]][link-downloads]
@@ -30,6 +30,7 @@ composer require alexgithub987/sekadatacheck
 Ügyfél:
 
 ```bash
+
  $data_array = [
    "nev" => "Dezső Miskolc", 
    "email" => "mjeszt@dezsomiskolc.hu", 
@@ -53,12 +54,15 @@ composer require alexgithub987/sekadatacheck
 Cikk
 
 ```bash
-    $cikkszam = 555;
-    $partner = 2;
+    
+    $data_array = [
+            "cikkszam" => "5", 
+            "partner_id" => "2"
+         ]; 
 
     $cikk = new Cikk();
 
-    $ret = $cikk->index($cikkszam, $partner);
+    $ret = $cikk->index($data_array);
 ```
 
 
