@@ -13,24 +13,11 @@ Via Composer
 composer require alexgithub987/sekadatacheck
 ```
 
-## Installation
-
-/config/app.php
-
-    'jiraproject' => env('JIRA_PROJECT', ''),
-    'jiraassignee' => env('JIRA_ASSIGNEE', ''),
-    'jirauser' => env('JIRA_USER', ''),
-    'jirapassword' => env('JIRA_PASSWORD', ''),
-    'jiraurl' => env('JIRA_URL', ''),
-
-í
-
 ## Usage
 
 Ügyfél:
 
 ```bash
-
  $data_array = [
    "nev" => "Dezső Miskolc", 
    "email" => "mjeszt@dezsomiskolc.hu", 
@@ -51,37 +38,27 @@ composer require alexgithub987/sekadatacheck
   $ret = $ugyfel->index($data_array);
 ```
 
-Cikk
+Cikk:
 
-```bash
-    
-    $data_array = [
-            "cikkszam" => "5", 
-            "partner_id" => "2"
-         ]; 
+```bash    
+  $data_array = [
+          "cikkszam" => "5", 
+          "partner_id" => "2"
+        ]; 
 
-    $cikk = new Cikk();
-
-    $ret = $cikk->index($data_array);
+  $cikk = new Cikk();
+  $ret = $cikk->index($data_array);
 ```
 
 
-## Contributing
-
-Please see [contributing.md](contributing.md) for details and a todolist.
-
 ## Security
 
-If you discover any security related issues, please email author@email.com instead of using the issue tracker.
+If you discover any security related issues, please email kolozs.sandor@sekasodt.hu instead of using the issue tracker.
 
 ## Credits
 
 - [Author Name][link-author]
-- [All Contributors][link-contributors]
 
-## License
-
-MIT. Please see the [license file](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/alexgithub987/ugyfel.svg?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/alexgithub987/ugyfel.svg?style=flat-square
