@@ -64,7 +64,7 @@ class Ugyfel
         $ugyfel_new->status         = '1';
         $ugyfel_new->save();
 
-        $ugyfel = ModelsUgyfel::where('id', $ugyfel_new->id)->first();
+        $ugyfel = ModelsUgyfel::where('id', $ugyfel_new->id)->first()->toArray();
 
         if (isset($data['egyszeru_cim'])) {
             $kozterulet = $data['egyszeru_cim'];

@@ -23,7 +23,7 @@ composer require alexgithub987/sekadatacheck
    "email" => "mjeszt@dezsomiskolc.hu", 
    "telefon" => "06301234567", 
    "adoszam" => "asdasfaf", 
-   "ceg" => "", 
+   "ceg" => "valami", 
    "cim_type" => "SZEKHELY", 
    "orszag" => "HU", 
    "irsz" => "6800", 
