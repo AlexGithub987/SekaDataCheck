@@ -57,18 +57,12 @@ class Cikk
         }
 
 
-
-        $cikkszam = ModelsCikk::select("*")
-            ->where("forgalmazoi_kod", "=", $cikk_azonosito)
+        $cikkszam = ModelsCikk::select("cikktorzs.*")
+            ->join('cikk_tcso', 'cikktorzs.id', '=', 'cikk_tcso.cikktorzs_id')
+            ->where("cikk_tcso.partner_id", "=", $partner_id)
+            ->where("cikktorzs.cikk_azonosito", "=", $cikk_azonosito)
             ->get();
 
-        if ($cikkszam->count() == 0) {
-            $cikkszam = ModelsCikk::select("cikktorzs.*")
-                ->join('cikk_tcso', 'cikktorzs.id', '=', 'cikk_tcso.cikktorzs_id')
-                ->where("cikk_tcso.partner_id", "=", $partner_id)
-                ->where("cikktorzs.cikk_azonosito", "=", $cikk_azonosito)
-                ->get();
-        }
 
         if ($cikkszam->count() == 0) {
             $cikkszam = ModelsCikk::select("cikktorzs.*")
